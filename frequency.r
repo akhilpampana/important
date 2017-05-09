@@ -1,0 +1,5 @@
+library(RCurl)
+genelength <- read.table(url('ftp://ftp.ncbi.nih.gov/genbank/genomes/Bacteria/Escherichia_coli_K_12_substr__MG1655_uid225/U00096.ptt'),header = FALSE, sep = "\t", skip = 3, colClasses = c("NULL","NULL","integer","NULL","NULL","NULL","NULL","NULL","NULL"), quote = "")
+View(genelength)
+length=as.numeric(genelength[,])
+hist(length, col = 'red', breaks = seq(1,4140,by=100), plot = TRUE,ylim = c(0,1000))
